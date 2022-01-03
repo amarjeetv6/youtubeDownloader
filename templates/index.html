@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- MAIN BODY -->
+<div class="jumbotron text-center" style="margin-top: 10%;">
+    <h1 class="display-2 fw-light pb-5">Youtube<span class="text-danger">Downloader</span></h1>         
+    <!-- search box -->
+      <div class="container">
+        <form action="/search" method="POST" class="">
+          <input type="text" name="url" id="searchbox" class="form-control searchbox" placeholder="search Google or type a URL" required>
+        </form>
+    </div>
+  </div>
+  
+  <div id="bottom" class="container-fluid fw-light">press ENTER after paste URL </div>
+  
+
+{% endblock %}

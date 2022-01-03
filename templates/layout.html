@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Youtube Downloader</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="{{ url_for('static', filename='assets/css/theme.css') }}" rel="stylesheet" id="style-default">
+</head>
+<body>
+
+    {% block body%}
+    {% endblock %}
+
+    <script href="{{ url_for('static', filename='assets/icon/all.min.js') }}" rel="stylesheet" id="style-default"></script>
+</body>
+</html>

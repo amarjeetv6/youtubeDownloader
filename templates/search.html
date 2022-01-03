@@ -1,0 +1,134 @@
+<!-- {{url}} -->
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-5">
+    <!-- Display File details -->
+    <div class="row"> 
+        <div class="col-xxl-6 col-lg-12">
+          <div class="card h-100">
+            <div class="bg-holder bg-card" style="background-image:url('/static/assets/img/corner-1.png')">
+            </div>
+            <!--/.bg-holder-->
+            <div class="card-header z-index-1">
+              <h5 class="text-primary">Welcome to Youtube Downloader! </h5>
+              <h6 class="text-600">Here are some quick links for you to start </h6>
+            </div>
+            <div class="card-body z-index-1">
+              <div class="row g-2 h-100 align-items-end">
+                <div class="col-sm-6 col-md-5">
+                  <div class="d-flex position-relative">
+                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                      <span class="fa fa-play text-primary"></span>
+                    </div>
+                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                        <h6 class="text-800 mb-0">{{url.title}}</h6>
+                      </a>
+                      <p class="mb-0 fs--2 text-500">File name</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5">
+                  <div class="d-flex position-relative">
+                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                      <span class="fas fa-text text-warning"></span>
+                    </div>
+                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                        <h6 class="text-800 mb-0">{{url.author}}</h6>
+                      </a>
+                      <p class="mb-0 fs--2 text-500">Author </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5">
+                  <div class="d-flex position-relative">
+                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                      <span class="fa fa-calendar text-success"></span>
+                    </div>
+                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                        <h6 class="text-800 mb-0">{{url.publish_date}}</h6>
+                        
+                      </a>
+                      <p class="mb-0 fs--2 text-500">Publish Date</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5">
+                  <div class="d-flex position-relative">
+                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                      <span class="fas fa-eye text-info"></span>
+                    </div>
+                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                        <h6 class="text-800 mb-0">{{url.views}}</h6>
+                      </a>
+                      <p class="mb-0 fs--2 text-500">Total Views</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!-- fetch files -->
+    <div class="row my-5">
+        <div class="col-xxl-6 col-lg-12">
+          <div class="card h-100 ">
+            <div class="card-header pb-0 d-flex flex-between-center">
+              <h5 class="text-primary">Files to be Download
+              </h5>
+            </div>
+            <div class="card-body pt-0 border-bottom">
+              <div class="d-flex justify-content-between mb-2">
+                <h6>Here are some quick links for you to start</h6>
+              </div>
+              {% for files in url.streams.filter(progressive=True) %}
+              <div class="d-flex flex-between-center rounded-3 bg-white boxshadow p-3 mb-2">
+                <a href="#!" class="text-decoration-none">
+                  <h6 class="mb-0">
+                    <span class="fa fa-video me-3 text-primary"></span>
+                    {{files.title}}
+                  </h6>
+                </a>
+                <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!">
+                  Video / {{files.resolution}}
+                </a>
+                <form action="/download" method="POST">
+                    <input type="text" name="video_itag" value="{{files.itag}}" hidden>  
+                    <button class="btn btn-falcon-primary btn-primary me-1 mb-1" type="submit" >
+                        <span class="fas fa-download" data-fa-transform="shrink-3"></span>
+                      </button>
+                  <!-- {{url}} -->
+                </form>
+                <!-- <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!"></a> -->
+              </div>
+              {% endfor %}
+    
+              {% for files in url.streams.filter(only_audio=True) %}
+              <div class="d-flex flex-between-center rounded-3 bg-white boxshadow p-3 mb-2">
+                <a href="#!" class="text-decoration-none">
+                  <h6 class="mb-0">
+                    <span class="fa fa-music me-3 text-primary"></span>
+                    {{files.title}}
+                  </h6>
+                </a>
+                <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!">
+                  Audio / {{files.abr}}
+                </a>
+                <form action="/download" method="POST">
+                    <input type="text" name="audio_itag" value="{{files.itag}}" hidden>  
+                    <button class="btn btn-falcon-primary btn-primary me-1 mb-1" type="submit" >
+                    <span class="fas fa-download" data-fa-transform="shrink-3"></span>
+                  </button>
+                  <!-- {{url}} -->
+                </form>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>    
+
+   
+</div>
+{% endblock %}
