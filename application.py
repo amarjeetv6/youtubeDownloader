@@ -57,7 +57,11 @@ def download():
         
             return send_file(buffer, as_attachment=True, download_name=yt.title+'.mp3')
 
-    return render_template("error.html")
+    return render_template("search.html")
 
+@application.route("/test")
+def test():
+    return render_template("test.html")
+    
 if __name__ == "__main__"    :
     app.run(debug=True)
