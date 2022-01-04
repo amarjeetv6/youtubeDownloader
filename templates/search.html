@@ -1,66 +1,70 @@
 <!-- {{url}} -->
 {% extends "layout.html" %}
 {% block body %}
-<div class="container mt-5">
-    <!-- Display File details -->
-    <div class="row"> 
-        <div class="col-xxl-6 col-lg-12">
-          <div class="card h-100">
-            <div class="bg-holder bg-card" style="background-image:url('/static/assets/img/corner-1.png')">
-            </div>
-            <!--/.bg-holder-->
-            <div class="card-header z-index-1">
-              <h5 class="text-primary">Welcome to Youtube Downloader! </h5>
-              <h6 class="text-600">Here are some quick links for you to start </h6>
-            </div>
-            <div class="card-body z-index-1">
-              <div class="row g-2 h-100 align-items-end">
-                <div class="col-sm-6 col-md-5">
-                  <div class="d-flex position-relative">
-                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
-                      <span class="fa fa-play text-primary"></span>
-                    </div>
-                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
-                        <h6 class="text-800 mb-0">{{url.title}}</h6>
-                      </a>
-                      <p class="mb-0 fs--2 text-500">File name</p>
-                    </div>
-                  </div>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="bg-holder bg-card" style="background-image:url('/static/assets/img/corner-1.png')"></div>
+      <div class="card-body p-0 overflow-hidden z-index-1">
+        <div class="row g-0">
+          <div class="col-12 p-card">
+            <div class="row">
+              <div class="col-sm-5 col-md-4">
+                <div class="position-relative h-sm-100">
+                  <a class="" href="javascript:void(0)">
+                    <img class="imgBox img-fluid fit-cover w-sm-100 h-sm-100 rounded-1 absolute-sm-centered" src="{{url.thumbnail_url}}" alt="">
+                  </a>
                 </div>
-                <div class="col-sm-6 col-md-5">
-                  <div class="d-flex position-relative">
-                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
-                      <span class="fas fa-text text-warning"></span>
-                    </div>
-                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
-                        <h6 class="text-800 mb-0">{{url.author}}</h6>
-                      </a>
-                      <p class="mb-0 fs--2 text-500">Author </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-5">
-                  <div class="d-flex position-relative">
-                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
-                      <span class="fa fa-calendar text-success"></span>
-                    </div>
-                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
-                        <h6 class="text-800 mb-0">{{url.publish_date}}</h6>
-                        
-                      </a>
-                      <p class="mb-0 fs--2 text-500">Publish Date</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-5">
-                  <div class="d-flex position-relative">
-                    <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
-                      <span class="fas fa-eye text-info"></span>
-                    </div>
-                    <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
-                        <h6 class="text-800 mb-0">{{url.views}}</h6>
-                      </a>
-                      <p class="mb-0 fs--2 text-500">Total Views</p>
+              </div>
+              <div class="col-sm-7 col-md-8">
+                <div class="row"> 
+                  <div class="col-xxl-6 col-lg-12">
+                    <div class="h-100">
+                      <div class="card-header">
+                        <a href="#" class="">
+                          <h5 class="text-danger mb-0 cursor">{{url.title}}</h5>
+                        </a>
+                        <!-- <h6 class="text-600">Here are some quick info befor you to start </h6> -->
+                      </div>
+                      <div class="card-body">
+                        <div class="row g-2 h-100 align-items-end">
+                          <div class="col-sm-6 col-md-5">
+                            <div class="d-flex position-relative">
+                              <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                                <span class="fas fa-text text-warning"></span>
+                              </div>
+                              <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                                  <h6 class="text-800 mb-0">{{url.author}}</h6>
+                                </a>
+                                <p class="mb-0 fs--2 text-500">Author </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-5">
+                            <div class="d-flex position-relative">
+                              <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                                <span class="fa fa-calendar text-success"></span>
+                              </div>
+                              <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                                  <h6 class="text-800 mb-0">{{url.publish_date}}</h6>
+                                </a>
+                                <p class="mb-0 fs--2 text-500">Publish Date</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-5">
+                            <div class="d-flex position-relative">
+                              <div class="icon-item icon-item-sm border rounded-3 shadow-none me-2">
+                                <span class="fas fa-eye text-info"></span>
+                              </div>
+                              <div class="flex-1"><a class="stretched-link text-decoration-none" href="javascript:void(0)">
+                                  <h6 class="text-800 mb-0">{{url.views}}</h6>
+                                </a>
+                                <p class="mb-0 fs--2 text-500">Total Views</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -68,67 +72,58 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
-    
-    <!-- fetch files -->
-    <div class="row my-5">
-        <div class="col-xxl-6 col-lg-12">
-          <div class="card h-100 ">
-            <div class="card-header pb-0 d-flex flex-between-center">
-              <h5 class="text-primary">Files to be Download
-              </h5>
-            </div>
-            <div class="card-body pt-0 border-bottom">
-              <div class="d-flex justify-content-between mb-2">
-                <h6>Here are some quick links for you to start</h6>
-              </div>
+
+    <div class="row mt-4 mb-5">
+      <div class="col-xxl-4">
+        <div class="card h-100">
+          <div class="card-header">
+            <h6 class="mb-0 text-danger">Choose File Type</h6>
+          </div>
+          <div class="card-body p-0 scrollbar to-do-list-body-height">
+            <form action="/download" method="post">
               {% for files in url.streams.filter(progressive=True) %}
-              <div class="d-flex flex-between-center rounded-3 bg-white boxshadow p-3 mb-2">
-                <a href="#!" class="text-decoration-none">
-                  <h6 class="mb-0">
-                    <span class="fa fa-video me-3 text-primary"></span>
-                    {{files.title}}
-                  </h6>
-                </a>
-                <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!">
-                  Video / {{files.resolution}}
-                </a>
-                <form action="/download" method="POST">
-                    <input type="text" name="video_itag" value="{{files.itag}}" hidden>  
-                    <button class="btn btn-falcon-primary btn-primary me-1 mb-1" type="submit" >
-                        <span class="fas fa-download" data-fa-transform="shrink-3"></span>
+                <div class="d-flex justify-content-between border-top hover-actions-trigger btn-reveal-trigger px-card border-200 todo-list-item">
+                  <div class="form-check mb-0 d-flex align-items-center">
+                    <span class="far fa-circle"></span>
+                    <label class="form-check-label mb-0 p-3" for="checkbox-todo-0">
+                      Download Video with Resolution - {{files.resolution}}
+                    </label>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      <input type="text" name="video_itag" value="{{files.itag}}" hidden>
+                      <button type="submit" class="btn btn-light icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        <span class="fas fa-download fa-2x text-danger"></span>
                       </button>
-                  <!-- {{url}} -->
-                </form>
-                <!-- <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!"></a> -->
-              </div>
+                      <!-- <button class="btn btn-light d-sm-block d-lg-none icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-user-plus fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg><span class="fas fa-user-plus"> </span> Font Awesome fontawesome.com</button> -->
+                    </div>
+                  </div>
+                </div>
               {% endfor %}
-    
-              {% for files in url.streams.filter(only_audio=True) %}
-              <div class="d-flex flex-between-center rounded-3 bg-white boxshadow p-3 mb-2">
-                <a href="#!" class="text-decoration-none">
-                  <h6 class="mb-0">
-                    <span class="fa fa-music me-3 text-primary"></span>
-                    {{files.title}}
-                  </h6>
-                </a>
-                <a class="fs--2 text-600 mb-0 text-decoration-none" href="#!">
-                  Audio / {{files.abr}}
-                </a>
-                <form action="/download" method="POST">
-                    <input type="text" name="audio_itag" value="{{files.itag}}" hidden>  
-                    <button class="btn btn-falcon-primary btn-primary me-1 mb-1" type="submit" >
-                    <span class="fas fa-download" data-fa-transform="shrink-3"></span>
-                  </button>
-                  <!-- {{url}} -->
-                </form>
-              </div>
-              {% endfor %}
-            </div>
+            </form>
+            <form action="/download" method="post">
+                <div class="d-flex justify-content-between border-top hover-actions-trigger btn-reveal-trigger px-card border-200 todo-list-item">
+                  <div class="form-check mb-0 d-flex align-items-center">
+                    <span class="far fa-circle"></span>
+                    <label class="form-check-label mb-0 p-3" for="checkbox-todo-0">
+                      Download Audio with High Quality - 160kbps</label>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      <input type="text" name="audio_itag" value="251" hidden>
+                      <button type="submit" class="btn btn-light icon-item rounded-3 me-2 fs--2 icon-item-sm">
+                        <span class="fas fa-download fa-2x text-danger"></span>
+                      </button>
+                      <!-- <button class="btn btn-light d-sm-block d-lg-none icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-user-plus fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg><span class="fas fa-user-plus"> </span> Font Awesome fontawesome.com</button> -->
+                    </div>
+                  </div>
+                </div>              
+            </form>
           </div>
         </div>
-    </div>    
-
-   
-</div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
