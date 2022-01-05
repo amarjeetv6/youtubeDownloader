@@ -59,5 +59,19 @@ def download():
 
     return render_template("error.html")
 
+# Test ROute
+@application.route("/layout")
+def layout():
+    return render_template("layout.html")
+
+@application.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form.get("username")
+        username = request.form.get("username")
+        username = request.form.get("username")
+        username = request.form.get("username")
+
+    return render_template("index.html")
 if __name__ == "__main__"    :
     app.run(debug=True)
