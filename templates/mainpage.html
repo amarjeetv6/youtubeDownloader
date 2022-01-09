@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container" style="margin-top: 10%;">
+    <div class="row g-3 mb-3">
+        <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-body p-4 p-sm-5">
+            <div class="text-center">
+                <img class="d-block mx-auto mb-4" src="{{url_for('static', filename='assets/img/facebook.png')}}" alt="shield" width="100">
+                <h4>Facebook Downloader!</h4>
+                <p>Thanks for using Falcon. You are <br>now successfully signed out.</p>
+                <a class="btn btn-primary btn-sm mt-3" href="{{ url_for('facebook') }}">
+                    Go to facebook
+                    <span class="fas fa-chevron-right me-1" data-fa-transform="shrink-4 down-1"></span>
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body p-4 p-sm-5">
+            <div class="text-center">
+                <img class="d-block mx-auto mb-4" src="{{url_for('static', filename='assets/img/youtube.png')}}" alt="Email" width="100">
+                <h4 class="mb-2">Youtube Downloader!</h4>
+                <p>An email has been sent to <strong>xyz@abc.com</strong>. Please click on the included link to reset your password.</p>
+                <a class="btn btn-primary btn-sm mt-3" href="{{ url_for('youtube') }}">
+                    Go to youtube
+                    <span class="fas fa-chevron-right me-1" data-fa-transform="shrink-4 down-1"></span>
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
