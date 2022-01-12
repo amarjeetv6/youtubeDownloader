@@ -29,9 +29,13 @@ filedir = os.path.join('/home/groot/Downloads')
 #     return render_template("index.html")
 
 @application.route("/")
-def mainpage():
+def index():
     return render_template("index.html")
-    
+
+@application.route("/mainpage")
+def mainpage():
+    return render_template("mainpage.html")
+
 # search data url
 @application.route("/search", methods = ["GET", "POST"])
 def search():
